@@ -9,3 +9,4 @@ model  = AutoModelForCausalLM.from_pretrained(model_name)
 quantizer = IncQuantizer(model)
 quantized_model = quantizer.quantize()
 quantized_model.save_pretrained("quantized_model")
+
