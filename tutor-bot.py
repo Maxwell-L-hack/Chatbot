@@ -10,3 +10,4 @@ quantizer = IncQuantizer(model)
 quantized_model = quantizer.quantize()
 quantized_model.save_pretrained("quantized_model")
 
+# Response generator function
