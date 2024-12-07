@@ -3,7 +3,7 @@ from datasets import load_dataset
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from optimum.intel.neural_compressor import INCModelForSequenceClassification
 
-model_name="distil-bert-uncased"
+model_name="distilbert/distil-bert-uncased"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model  = AutoModelForCausalLM.from_pretrained(model_name)
 
