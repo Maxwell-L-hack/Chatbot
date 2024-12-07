@@ -3,7 +3,7 @@ from datasets import load_dataset
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from optimum.intel.neural_compressor import INCModelForSequenceClassification
 
-model_name="distilbert/distil-bert-uncased"
+model_name="distilbert/distilbert-base-uncased"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model  = AutoModelForCausalLM.from_pretrained(model_name)
 
@@ -22,8 +22,7 @@ def generate_response(user_input):
 def chat(user_input):
     return generate_response(user_input)
 
-iface = gr.Interface(fn=chat, inputs="text", outputs="text")
-title="Educational Tutor Bot"
+iface = gr.Interface(fn=chat, inputs="text", outputs="text", title="Educational Tutor Bot")
 iface.launch
 
 dataset = load_dataset("squad")
