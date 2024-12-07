@@ -1,14 +1,14 @@
 import gradio as gr
 from datasets import load_dataset
 from transformers import AutoModelForCausalLM, AutoTokenizer
-from optimum.intel.neural_compressor import INCModelForSequenceCalssification
+from optimum.intel.neural_compressor import INCModelForSequenceClassification
 
 model_name="distil-bert-uncased"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model  = AutoModelForCausalLM.from_pretrained(model_name)
 
 # Apply dynamic quantization
-INCModelForSequenceCalssification.from_pretrained(model_name, quantize=True)
+INCModelForSequenceClassification.from_pretrained(model_name, quantize=True)
 quantized_model.save_pretrained("quantized_model")
 
 # Response generator function
