@@ -9,7 +9,7 @@ tokenizer = AutoTokenizer.from_pretrained("distilbert/distilbert-base-uncased")
 model = AutoModelForMaskedLM.from_pretrained("distilbert/distilbert-base-uncased")
 
 # Apply dynamic quantization
-INCModelForSequenceClassification.from_pretrained(model_name, quantize=True)
+INCModelForMaskedLM.from_pretrained(model_name, quantize=True)
 quantized_model.save_pretrained("quantized_model")
 
 # Response generator function
