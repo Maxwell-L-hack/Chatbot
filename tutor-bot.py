@@ -5,7 +5,7 @@ from huggingface_hub import hf_hub_download
 from optimum.intel.neural_compressor import INCModelForSequenceClassification
 
 model_name="distilbert/distilbert-base-uncased"
-tokenizer = AutoTokenizer.from_pretrained(model_name)
+tokenizer = AutoTokenizer.from_pretrained("distilbert/distilbert-base-uncased")
 model  = AutoModelForMaskedLM.from_pretrained(model_name)
 
 # Apply dynamic quantization
