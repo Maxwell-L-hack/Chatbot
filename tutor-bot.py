@@ -1,6 +1,7 @@
 import gradio as gr
 from datasets import load_dataset
 from transformers import AutoModelForMaskedLM, AutoTokenizer
+from huggingface_hub import hf_hub_download
 from optimum.intel.neural_compressor import INCModelForSequenceClassification
 
 model_name="distilbert/distilbert-base-uncased"
