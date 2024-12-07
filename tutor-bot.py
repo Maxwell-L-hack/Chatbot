@@ -4,9 +4,9 @@ from transformers import AutoModelForMaskedLM, AutoTokenizer
 from huggingface_hub import hf_hub_download
 from optimum.intel.neural_compressor import INCModelForMaskedLM
 
-model_name="distilbert/distilbert-base-uncased"
-tokenizer = AutoTokenizer.from_pretrained("distilbert/distilbert-base-uncased")
-model = AutoModelForMaskedLM.from_pretrained("distilbert/distilbert-base-uncased")
+model_name="distilbert-base-uncased"
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModelForMaskedLM.from_pretrained(model_name)
 
 # Apply dynamic quantization
 INCModelForMaskedLM.from_pretrained(model_name, quantize=True)
