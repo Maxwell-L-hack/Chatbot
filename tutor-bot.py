@@ -1,6 +1,6 @@
 import gradio as gr
 from datasets import load_dataset
-from transformers import AutoModelForCausalLM, AutoTokenizer
+from transformers import AutoModelForMaskedLM, AutoTokenizer
 from optimum.intel.neural_compressor import INCModelForSequenceClassification
 
 model_name="distilbert/distilbert-base-uncased"
@@ -23,6 +23,6 @@ def chat(user_input):
     return generate_response(user_input)
 
 iface = gr.Interface(fn=chat, inputs="text", outputs="text", title="Educational Tutor Bot")
-iface.launch
+iface.launch()
 
 dataset = load_dataset("squad")
