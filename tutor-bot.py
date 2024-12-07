@@ -6,7 +6,7 @@ from optimum.intel.neural_compressor import INCModelForSequenceClassification
 
 model_name="distilbert/distilbert-base-uncased"
 tokenizer = AutoTokenizer.from_pretrained("distilbert/distilbert-base-uncased")
-model  = AutoModelForMaskedLM.from_pretrained(model_name)
+model = AutoModelForMaskedLM.from_pretrained("distilbert/distilbert-base-uncased")
 
 # Apply dynamic quantization
 INCModelForSequenceClassification.from_pretrained(model_name, quantize=True)
