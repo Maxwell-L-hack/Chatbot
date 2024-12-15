@@ -32,4 +32,4 @@ def chat(user_input):
     return generate_response(user_input)
 
 iface = gr.Interface(fn=chat, inputs="text", outputs="text", title="Chatbot")
-iface.launch()
+iface.launch(share=True)
